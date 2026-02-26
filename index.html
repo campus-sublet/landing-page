@@ -251,12 +251,6 @@
     e.preventDefault();
     const email = document.getElementById('waitlist-email').value.trim().toLowerCase();
 
-    const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
-    if (!token) {
-      alert('Please complete the security check.');
-      return;
-    }
-
     if (!email.endsWith('@fsu.edu')) {
       alert('Please use your FSU .edu email address (e.g. your@fsu.edu).');
       return;
