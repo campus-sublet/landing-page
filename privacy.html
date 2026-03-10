@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — CampusSublet</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Privacy page layout ─────────────────────────────── */
+
+    .privacy-hero {
+      position: relative;
+      padding: 120px 5% 64px;
+      overflow: hidden;
+      background: linear-gradient(155deg, #0a182d 0%, #102947 45%, #173764 100%);
+    }
+    .privacy-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+              radial-gradient(600px circle at 12% 30%, rgba(109, 27, 50, 0.52), transparent 60%),
+              radial-gradient(400px circle at 88% 10%, rgba(204, 170, 106, 0.14), transparent 72%);
+    }
+    .privacy-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+              linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(circle at center, black 48%, transparent 98%);
+    }
+    .privacy-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .privacy-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-400);
+      margin-bottom: 16px;
+    }
+    .privacy-eyebrow::before,
+    .privacy-eyebrow::after {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.42;
+    }
+    .privacy-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .privacy-hero p {
+      color: rgba(244, 246, 251, 0.7);
+      font-size: 0.92rem;
+    }
+
+    /* ── Main content wrapper ────────────────────────────── */
+    .privacy-body {
+      background: var(--sand-50);
+    }
+    .privacy-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 5% 96px;
+    }
+
+    /* ── Table of Contents ───────────────────────────────── */
+    .privacy-toc {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 52px;
+      box-shadow: var(--shadow-sm);
+    }
+    .toc-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+      list-style: none;
+    }
+    .toc-grid a {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--ink-800);
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .toc-grid a:hover {
+      color: var(--wine-700);
+    }
+    .toc-num {
+      font-size: 0.72rem;
+      color: var(--muted);
+      min-width: 18px;
+    }
+
+    /* ── Section blocks ──────────────────────────────────── */
+    .pp-section {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 90px;
+    }
+    .pp-section:last-of-type {
+      border-bottom: none;
+    }
+    .pp-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .pp-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f5ece0, #ede3d4);
+      border: 1px solid rgba(107, 26, 49, 0.18);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--wine-700);
+      flex-shrink: 0;
+    }
+    .pp-section h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.93rem;
+      font-weight: 600;
+      color: var(--ink-800);
+      margin: 20px 0 8px;
+    }
+    .pp-section p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .pp-section p:last-child {
+      margin-bottom: 0;
+    }
+    .pp-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pp-section ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .pp-section ul li::before {
+      content: "—";
+      color: var(--gold-500);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pp-section strong {
+      color: var(--ink-900);
+      font-weight: 600;
+    }
+    .pp-section a {
+      color: var(--wine-700);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .pp-section a:hover {
+      color: var(--wine-900);
+    }
+
+    /* ── Callout / disclaimer box ────────────────────────── */
+    .pp-callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(107, 26, 49, 0.2);
+      border-left: 3px solid var(--wine-700);
+      background: linear-gradient(135deg, #fdf5f7, #fdf7f2);
+      margin: 16px 0;
+    }
+    .pp-callout p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--ink-800);
+      line-height: 1.7;
+    }
+
+    /* ── Contact card ────────────────────────────────────── */
+    .pp-contact {
+      padding: 22px 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      margin-top: 16px;
+    }
+    .pp-contact p {
+      margin: 0 0 4px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    .pp-contact p:last-child { margin: 0; }
+    .pp-contact-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ── Closing tagline ─────────────────────────────────── */
+    .pp-tagline {
+      margin-top: 48px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--ink-800);
+      opacity: 0.55;
+      font-style: italic;
+    }
+
+    /* ── Back to top ─────────────────────────────────────── */
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-top: 40px;
+      transition: color 0.2s;
+    }
+    .back-top:hover { color: var(--wine-700); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 620px) {
+      .toc-grid { grid-template-columns: 1fr; }
+      .privacy-toc { padding: 22px 20px; }
+      .privacy-container { padding: 40px 5% 72px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" fetchpriority="high">
+  </a>
+  <div class="nav-actions">
+    <a href="/#listings" class="btn-ghost">Browse Listings</a>
+    <a href="/#waitlist" class="btn-primary">Join Waitlist →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="privacy-hero">
+  <div class="privacy-hero-inner">
+    <div class="privacy-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Effective Date: March 9, 2026 &nbsp;·&nbsp; Last updated March 9, 2026</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="privacy-body">
+  <div class="privacy-container" id="top">
+
+    <!-- Table of Contents -->
+    <div class="privacy-toc">
+      <div class="toc-heading">Contents</div>
+      <ul class="toc-grid">
+        <li><a href="#s1"><span class="toc-num">1.</span> Introduction</a></li>
+        <li><a href="#s2"><span class="toc-num">2.</span> Information We Collect</a></li>
+        <li><a href="#s3"><span class="toc-num">3.</span> How We Use Your Information</a></li>
+        <li><a href="#s4"><span class="toc-num">4.</span> User Accounts &amp; Authentication</a></li>
+        <li><a href="#s5"><span class="toc-num">5.</span> User-Generated Content</a></li>
+        <li><a href="#s6"><span class="toc-num">6.</span> Messaging &amp; Communications</a></li>
+        <li><a href="#s7"><span class="toc-num">7.</span> Data Storage &amp; Security</a></li>
+        <li><a href="#s8"><span class="toc-num">8.</span> Third-Party Services</a></li>
+        <li><a href="#s9"><span class="toc-num">9.</span> Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#s10"><span class="toc-num">10.</span> Access, Update, or Delete</a></li>
+        <li><a href="#s11"><span class="toc-num">11.</span> Data Retention</a></li>
+        <li><a href="#s12"><span class="toc-num">12.</span> Children's Privacy</a></li>
+        <li><a href="#s13"><span class="toc-num">13.</span> Policy Changes</a></li>
+        <li><a href="#s14"><span class="toc-num">14.</span> Contact Information</a></li>
+      </ul>
+    </div>
+
+    <!-- 1 -->
+    <div class="pp-section" id="s1">
+      <h2><span class="pp-num">1</span> Introduction</h2>
+      <p>Welcome to CampusSublet. CampusSublet ("CampusSublet," "we," "our," or "us") operates a mobile application designed to help college students find and post off-campus housing subleases near their universities. We are committed to protecting the privacy and personal information of our users.</p>
+      <p>This Privacy Policy describes how we collect, use, store, share, and protect information when you use the CampusSublet mobile application (the "App") or any related services we provide (collectively, the "Services"). By creating an account or using the App, you agree to the practices described in this Privacy Policy.</p>
+      <div class="pp-callout">
+        <p><strong>Important Disclaimer:</strong> CampusSublet is a marketplace platform only. We do not own, manage, lease, operate, or control any properties listed on the App. We do not verify, endorse, or guarantee the accuracy of any listings, the identity of any users, or the safety or legality of any housing arrangement. All transactions and agreements are solely between the users involved. Users are encouraged to exercise caution and conduct their own due diligence before entering into any sublease agreement.</p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="pp-section" id="s2">
+      <h2><span class="pp-num">2</span> Information We Collect</h2>
+      <p>We collect the following categories of information when you use CampusSublet:</p>
+      <h3>2.1 Information You Provide Directly</h3>
+      <ul>
+        <li><strong>Name:</strong> Your first and last name provided during account registration.</li>
+        <li><strong>Email Address:</strong> Used to create and authenticate your account and for communications.</li>
+        <li><strong>University or School Affiliation:</strong> The name of the college or university you attend or are affiliated with.</li>
+        <li><strong>Profile Information:</strong> Any optional profile details you choose to add, such as a profile photo or bio.</li>
+        <li><strong>Listing Information:</strong> Details you provide when creating a sublease listing, including property address or general location, rental price, lease dates, property description, and photographs of the property.</li>
+        <li><strong>Messages:</strong> The content of in-app messages you send to and receive from other users.</li>
+        <li><strong>Saved Listings:</strong> Information about listings you save or mark as favorites.</li>
+        <li><strong>Reports:</strong> Information you submit when reporting a user or listing for policy violations or suspected fraudulent activity.</li>
+      </ul>
+      <h3>2.2 Information We Collect Automatically</h3>
+      <p>When you use the App, we may automatically collect certain technical information, including:</p>
+      <ul>
+        <li><strong>Device Information:</strong> Device type, operating system, and unique device identifiers.</li>
+        <li><strong>IP Address:</strong> Your internet protocol (IP) address, which may be used to infer general geographic location.</li>
+        <li><strong>Usage Analytics:</strong> Information about how you use the App, including pages or features accessed, time spent in the App, search queries, and interaction patterns.</li>
+        <li><strong>App Store Information:</strong> Basic information provided by the Apple App Store or Google Play Store in connection with your download or purchase of the App.</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="pp-section" id="s3">
+      <h2><span class="pp-num">3</span> How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li><strong>Account Creation and Management:</strong> To create and maintain your user account, verify your identity, and provide you with access to the Services.</li>
+        <li><strong>Platform Functionality:</strong> To allow you to create, browse, save, and manage sublease listings, and to facilitate messaging between users.</li>
+        <li><strong>Communications:</strong> To send you transactional emails, including account verification, password resets, and important notices about the Services.</li>
+        <li><strong>Safety and Trust:</strong> To review reports of users or listings, investigate potential violations of our Terms of Service, and take appropriate action to maintain platform integrity.</li>
+        <li><strong>Improvement of Services:</strong> To analyze usage patterns and user feedback in order to improve the App's functionality, user experience, and features.</li>
+        <li><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, or legal obligations, and to respond to lawful requests from governmental or regulatory authorities.</li>
+        <li><strong>Fraud Prevention:</strong> To detect, investigate, and prevent fraudulent activity, unauthorized access, and other misuse of the Services.</li>
+      </ul>
+    </div>
+
+    <!-- 4 -->
+    <div class="pp-section" id="s4">
+      <h2><span class="pp-num">4</span> User Accounts and Authentication</h2>
+      <p>To access most features of CampusSublet, you must create an account. When you register, you provide us with your name, email address, and university affiliation. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+      <p>We use your email address as the primary identifier for your account and for authentication purposes. You should use a strong, unique password and notify us immediately at <a href="mailto:support@campussublet.com">support@campussublet.com</a> if you suspect unauthorized access to your account.</p>
+      <p>By creating an account, you represent that you are at least 13 years of age and, if you are under 18 years of age, that you have obtained the consent of a parent or legal guardian to use the Services. We reserve the right to terminate accounts that we have reason to believe were created in violation of these requirements.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="pp-section" id="s5">
+      <h2><span class="pp-num">5</span> User-Generated Content (Listings, Photos, and Data)</h2>
+      <p>CampusSublet allows users to create and publish sublease listings, which may include property addresses or general locations, rental prices, lease dates, descriptions, and photographs. This content is visible to other users of the App and may be searchable within the platform.</p>
+      <div class="pp-callout">
+        <p><strong>Important:</strong> By submitting a listing, you represent and warrant that you have the right to sublease the property, that the information you provide is accurate and not misleading, and that any photographs you upload are owned by you or you have the necessary rights to use and share them.</p>
+      </div>
+      <p>CampusSublet does not verify listing accuracy, property ownership, sublease eligibility, or the identity of any listing poster. We expressly disclaim any responsibility for the accuracy, completeness, or legality of user-submitted listings. Users rely on listings at their own risk.</p>
+      <p>You retain ownership of any content you submit to the App. By submitting content, you grant CampusSublet a non-exclusive, royalty-free, worldwide license to use, display, reproduce, and distribute that content solely for the purpose of operating and improving the Services.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="pp-section" id="s6">
+      <h2><span class="pp-num">6</span> Messaging and Communications Between Users</h2>
+      <p>CampusSublet provides an in-app messaging feature that allows users to communicate directly with one another regarding listings. The content of these messages is stored on our servers to enable message delivery and to maintain your message history within the App.</p>
+      <p>While we do not routinely monitor the content of private messages, we reserve the right to review message content in connection with reported violations of our Terms of Service, safety investigations, fraud prevention efforts, or as required by law.</p>
+      <p>Users should exercise caution when sharing personal information through the in-app messaging system. CampusSublet is not responsible for the conduct of any user or for any information shared between users through the messaging feature.</p>
+      <div class="pp-callout">
+        <p>Do not share sensitive personal information such as financial account numbers, Social Security numbers, or passwords through the in-app messaging system.</p>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="pp-section" id="s7">
+      <h2><span class="pp-num">7</span> Data Storage and Security</h2>
+      <p>Your information is stored on secure servers maintained by CampusSublet or our third-party infrastructure providers. We implement technical, administrative, and organizational security measures designed to protect your personal information against unauthorized access, disclosure, alteration, or destruction. These measures include, but are not limited to, data encryption in transit (TLS/HTTPS), access controls, and regular security assessments.</p>
+      <p>Despite our efforts, no security system is impenetrable, and we cannot guarantee that your information is completely secure. Unauthorized entry or use, hardware or software failure, and other factors outside our control may compromise the security of user information at any time.</p>
+      <p>In the event of a data breach that is likely to result in a risk to your rights and freedoms, we will notify affected users and relevant authorities as required by applicable law.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="pp-section" id="s8">
+      <h2><span class="pp-num">8</span> Third-Party Services and Infrastructure</h2>
+      <p>CampusSublet may use third-party services and vendors to support the operation of the App. These third parties may have access to certain user information to the extent necessary to perform their functions. Categories of third-party service providers we may use include:</p>
+      <ul>
+        <li><strong>Cloud Infrastructure Providers:</strong> Hosting, database storage, and server infrastructure (e.g., Amazon Web Services, Google Cloud, or similar providers).</li>
+        <li><strong>Analytics Providers:</strong> Services that help us understand how users interact with the App (e.g., Firebase Analytics, Mixpanel, or similar tools).</li>
+        <li><strong>Authentication Services:</strong> Tools that support secure user login and account verification.</li>
+        <li><strong>Customer Support Platforms:</strong> Systems used to manage user inquiries and support tickets.</li>
+      </ul>
+      <p>CampusSublet is distributed through the Apple App Store and the Google Play Store. Apple and Google may collect information in connection with your download and use of the App pursuant to their own privacy policies. We encourage you to review Apple's and Google's privacy policies separately.</p>
+      <p>We do not sell your personal information to third-party advertisers. We do not permit third-party advertisers to collect your personal information through the App.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="pp-section" id="s9">
+      <h2><span class="pp-num">9</span> Data Sharing and Disclosure</h2>
+      <p>We do not sell, rent, or trade your personal information to third parties for their own marketing purposes. We may share your information in the following limited circumstances:</p>
+      <ul>
+        <li><strong>With Other Users:</strong> Certain information, such as your display name, university affiliation, profile photo, and listing details, is visible to other users of the App as part of the platform's functionality.</li>
+        <li><strong>With Service Providers:</strong> We share information with trusted third-party service providers who assist us in operating the App, subject to confidentiality obligations.</li>
+        <li><strong>For Legal Compliance:</strong> We may disclose information if required to do so by law, court order, or governmental authority, or if we believe disclosure is necessary to protect the rights, safety, or property of CampusSublet, our users, or the public.</li>
+        <li><strong>In Connection with Business Transfers:</strong> If CampusSublet is acquired by or merges with another entity, your information may be transferred as part of that transaction. We will notify users of any such change in ownership or control of personal information.</li>
+        <li><strong>With Your Consent:</strong> We may share your information for other purposes with your explicit consent.</li>
+      </ul>
+    </div>
+
+    <!-- 10 -->
+    <div class="pp-section" id="s10">
+      <h2><span class="pp-num">10</span> How to Access, Update, or Delete Your Data</h2>
+      <p>You have certain rights regarding the personal information we hold about you. Subject to applicable law, these include:</p>
+      <ul>
+        <li><strong>Access:</strong> You may request a copy of the personal information we hold about you.</li>
+        <li><strong>Correction:</strong> You may update or correct inaccurate information directly through the App's account settings or by contacting us.</li>
+        <li><strong>Deletion:</strong> You may request deletion of your account and associated personal information. Please note that some information may be retained as required by law or for legitimate business purposes, such as fraud prevention or dispute resolution.</li>
+        <li><strong>Portability:</strong> Where required by applicable law, you may request that we provide your personal information in a portable, machine-readable format.</li>
+      </ul>
+      <p>To exercise any of these rights, you may update your information directly within the App settings or contact us at <a href="mailto:support@campussublet.com">support@campussublet.com</a>. We will respond to your request within a reasonable time and in accordance with applicable legal requirements.</p>
+      <p>Please note that deleting your account will remove your profile, saved listings, and message history from active display. However, messages you have sent to other users may remain visible to those users.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="pp-section" id="s11">
+      <h2><span class="pp-num">11</span> Data Retention</h2>
+      <p>We retain your personal information for as long as your account is active or as needed to provide you with the Services. If you delete your account, we will delete or anonymize your personal information within a reasonable time, except where we are required to retain it for legal, regulatory, or legitimate business purposes.</p>
+      <p>Specifically, we may retain certain information after account deletion for the following purposes: complying with our legal obligations, resolving disputes, enforcing our agreements, preventing fraud, and maintaining security. Usage analytics data may be retained in anonymized or aggregated form indefinitely.</p>
+      <p>Listing information and messages associated with a deleted account will be removed from the App but may remain in backup systems for a limited period before being fully purged.</p>
+    </div>
+
+    <!-- 12 -->
+    <div class="pp-section" id="s12">
+      <h2><span class="pp-num">12</span> Children's Privacy (Users Under 13)</h2>
+      <p>CampusSublet is not directed to children under the age of 13, and we do not knowingly collect personal information from children under 13. If you are under 13 years of age, you may not create an account or use the Services.</p>
+      <p>If we learn that we have inadvertently collected personal information from a child under 13 years of age, we will take prompt steps to delete that information. If you are a parent or guardian and believe that your child under 13 has provided us with personal information, please contact us immediately at <a href="mailto:support@campussublet.com">support@campussublet.com</a>.</p>
+      <p>Users between the ages of 13 and 17 may use the Services only with the consent and supervision of a parent or legal guardian. By permitting a minor to use the Services, a parent or guardian agrees to this Privacy Policy on behalf of the minor.</p>
+    </div>
+
+    <!-- 13 -->
+    <div class="pp-section" id="s13">
+      <h2><span class="pp-num">13</span> Changes to This Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or for other business reasons. When we make material changes to this Privacy Policy, we will notify you by updating the "Effective Date" at the top of this document and, where required by applicable law, by providing notice through the App or via email.</p>
+      <p>Your continued use of the App after the effective date of any updated Privacy Policy constitutes your acceptance of the revised policy. We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.</p>
+    </div>
+
+    <!-- 14 -->
+    <div class="pp-section" id="s14">
+      <h2><span class="pp-num">14</span> Contact Information</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+      <div class="pp-contact">
+        <span class="pp-contact-name">CampusSublet</span>
+        <p>Email: <a href="mailto:support@campussublet.com">support@campussublet.com</a></p>
+        <p>Website: <a href="https://www.campussublet.com">www.campussublet.com</a></p>
+      </div>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--muted); font-style:italic;">This Privacy Policy was last updated on March 9, 2026.</p>
+
+    <div class="pp-tagline">CampusSublet — Connecting Students. Simplifying Subleases.</div>
+
+    <a href="#top" class="back-top">↑ Back to top</a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" loading="lazy">
+  </a>
+  <div class="footer-social-wrap">
+    <div class="footer-social-title">Check us out on social</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on Instagram">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect>
+          <circle cx="12" cy="12" r="3.8"></circle>
+          <circle cx="17.5" cy="6.8" r="1.2" class="social-icon-fill"></circle>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on TikTok">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.2 5.2c.9 1.3 2 2.1 3.3 2.5v2.4c-1.2 0-2.3-.3-3.3-1v5.1a5 5 0 1 1-5-5v2.5a2.5 2.5 0 1 0 2.5 2.5V4h2.5z" class="social-icon-fill"></path>
+        </svg>
+        <span>TikTok</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-text">Built by FSU students, for FSU students · CampusSublet.com</div>
+  <div class="footer-text">© 2026 CampusSublet · <a href="/privacy.html" style="color:var(--muted); text-decoration:none;">Privacy Policy</a></div>
+</footer>
+
+</body>
+</html>
