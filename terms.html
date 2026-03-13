@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service — CampusSublet</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Terms hero ───────────────────────────────────────── */
+    .terms-hero {
+      position: relative;
+      padding: 120px 5% 64px;
+      overflow: hidden;
+      background: linear-gradient(155deg, #0a182d 0%, #102947 45%, #173764 100%);
+    }
+    .terms-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px circle at 12% 30%, rgba(109, 27, 50, 0.52), transparent 60%),
+        radial-gradient(400px circle at 88% 10%, rgba(204, 170, 106, 0.14), transparent 72%);
+    }
+    .terms-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(circle at center, black 48%, transparent 98%);
+    }
+    .terms-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .terms-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-400);
+      margin-bottom: 16px;
+    }
+    .terms-eyebrow::before,
+    .terms-eyebrow::after {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.42;
+    }
+    .terms-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .terms-hero p {
+      color: rgba(244, 246, 251, 0.7);
+      font-size: 0.92rem;
+    }
+
+    /* ── Main content wrapper ────────────────────────────── */
+    .terms-body {
+      background: var(--sand-50);
+    }
+    .terms-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 5% 96px;
+    }
+
+    /* ── Table of Contents ───────────────────────────────── */
+    .terms-toc {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      margin-bottom: 52px;
+      box-shadow: var(--shadow-sm);
+    }
+    .toc-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 32px;
+      list-style: none;
+    }
+    .toc-grid a {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--ink-800);
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .toc-grid a:hover { color: var(--wine-700); }
+    .toc-num {
+      font-size: 0.72rem;
+      color: var(--muted);
+      min-width: 20px;
+    }
+
+    /* ── Section blocks ──────────────────────────────────── */
+    .pp-section {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 90px;
+    }
+    .pp-section:last-of-type { border-bottom: none; }
+    .pp-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .pp-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #f5ece0, #ede3d4);
+      border: 1px solid rgba(107, 26, 49, 0.18);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--wine-700);
+      flex-shrink: 0;
+    }
+    .pp-section p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .pp-section p:last-child { margin-bottom: 0; }
+    .pp-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .pp-section ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .pp-section ul li::before {
+      content: "—";
+      color: var(--gold-500);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pp-section strong { color: var(--ink-900); font-weight: 600; }
+    .pp-section a {
+      color: var(--wine-700);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .pp-section a:hover { color: var(--wine-900); }
+
+    /* ── Standard callout ────────────────────────────────── */
+    .pp-callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(107, 26, 49, 0.2);
+      border-left: 3px solid var(--wine-700);
+      background: linear-gradient(135deg, #fdf5f7, #fdf7f2);
+      margin: 16px 0;
+    }
+    .pp-callout p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--ink-800);
+      line-height: 1.7;
+    }
+
+    /* ── Zero-tolerance section card ─────────────────────── */
+    /* Visually distinct per App Store compliance requirements */
+    .zero-tolerance-card {
+      background: linear-gradient(135deg, #1a0409 0%, #2d0a15 55%, #3b0e1c 100%);
+      border: 1px solid rgba(107, 26, 49, 0.55);
+      border-top: 3px solid var(--wine-700);
+      border-radius: var(--radius-md);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(61, 12, 28, 0.28);
+    }
+    .zero-tolerance-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(107, 26, 49, 0.4);
+      border: 1px solid rgba(223, 195, 143, 0.3);
+      color: var(--gold-400);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .zero-tolerance-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e05575;
+      box-shadow: 0 0 0 3px rgba(224, 85, 117, 0.25);
+      flex-shrink: 0;
+    }
+    .zero-tolerance-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .zero-tolerance-card p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(244, 236, 240, 0.82);
+      margin-bottom: 14px;
+    }
+    .zero-tolerance-card p:last-child { margin-bottom: 0; }
+    .zero-tolerance-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .zero-tolerance-card ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 0.93rem;
+      line-height: 1.65;
+      color: rgba(244, 236, 240, 0.78);
+    }
+    .zero-tolerance-card ul li::before {
+      content: "✗";
+      color: #e05575;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .zero-tolerance-card strong { color: var(--white); font-weight: 600; }
+
+    /* ── Contact card ────────────────────────────────────── */
+    .pp-contact {
+      padding: 22px 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      margin-top: 16px;
+    }
+    .pp-contact p { margin: 0 0 4px; font-size: 0.93rem; color: var(--muted); }
+    .pp-contact p:last-child { margin: 0; }
+    .pp-contact-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* ── Closing tagline ─────────────────────────────────── */
+    .pp-tagline {
+      margin-top: 48px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--ink-800);
+      opacity: 0.55;
+      font-style: italic;
+    }
+
+    /* ── Back to top ─────────────────────────────────────── */
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-top: 40px;
+      transition: color 0.2s;
+    }
+    .back-top:hover { color: var(--wine-700); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 620px) {
+      .toc-grid { grid-template-columns: 1fr; }
+      .terms-toc { padding: 22px 20px; }
+      .terms-container { padding: 40px 5% 72px; }
+      .zero-tolerance-card { padding: 22px 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" fetchpriority="high">
+  </a>
+  <div class="nav-actions">
+    <a href="/#listings" class="btn-ghost">Browse Listings</a>
+    <a href="/#waitlist" class="btn-primary">Join Waitlist →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="terms-hero">
+  <div class="terms-hero-inner">
+    <div class="terms-eyebrow">Legal</div>
+    <h1>Terms of Service</h1>
+    <p>Last updated: March 2026 &nbsp;·&nbsp; Effective immediately upon account creation</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="terms-body">
+  <div class="terms-container" id="top">
+
+    <!-- Table of Contents -->
+    <div class="terms-toc">
+      <div class="toc-heading">Contents</div>
+      <ul class="toc-grid">
+        <li><a href="#s1"><span class="toc-num">1.</span> Acceptance of Terms</a></li>
+        <li><a href="#s2"><span class="toc-num">2.</span> Eligibility</a></li>
+        <li><a href="#s3"><span class="toc-num">3.</span> Community Guidelines</a></li>
+        <li><a href="#s4"><span class="toc-num">4.</span> Listings</a></li>
+        <li><a href="#s5"><span class="toc-num">5.</span> Messaging</a></li>
+        <li><a href="#s6"><span class="toc-num">6.</span> Blocking &amp; Reporting</a></li>
+        <li><a href="#s7"><span class="toc-num">7.</span> Privacy</a></li>
+        <li><a href="#s8"><span class="toc-num">8.</span> Intellectual Property</a></li>
+        <li><a href="#s9"><span class="toc-num">9.</span> Disclaimers &amp; Liability</a></li>
+        <li><a href="#s10"><span class="toc-num">10.</span> Changes to Terms</a></li>
+        <li><a href="#s11"><span class="toc-num">11.</span> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 1 · Acceptance -->
+    <div class="pp-section" id="s1">
+      <h2><span class="pp-num">1</span> Acceptance of Terms</h2>
+      <p>By creating a CampusSublet account or using any feature of the platform — including browsing listings, posting a sublease, or sending a message — you agree to be bound by these Terms of Service. If you do not agree, do not use CampusSublet.</p>
+      <p>You must be at least 18 years old to use CampusSublet. If you are between 13 and 17, you may only use the platform with the consent and involvement of a parent or legal guardian, who also agrees to these Terms on your behalf. We do not knowingly allow users under 13.</p>
+    </div>
+
+    <!-- 2 · Eligibility -->
+    <div class="pp-section" id="s2">
+      <h2><span class="pp-num">2</span> Eligibility</h2>
+      <p>CampusSublet is exclusively for verified Florida State University students. To create an account you must have an active <strong>@fsu.edu</strong> or <strong>@my.fsu.edu</strong> email address, which we use to confirm your student status.</p>
+      <ul>
+        <li>Each person may hold only one CampusSublet account.</li>
+        <li>Your account is personal and non-transferable — you may not share, sell, or give access to another person.</li>
+        <li>If your FSU email becomes inactive (e.g. you graduate or leave), your account may be deactivated.</li>
+      </ul>
+    </div>
+
+    <!-- 3 · Community Guidelines — visually prominent for App Store compliance -->
+    <div class="pp-section" id="s3">
+      <h2><span class="pp-num">3</span> Community Guidelines &amp; Zero Tolerance Policy</h2>
+
+      <div class="zero-tolerance-card">
+        <div class="zero-tolerance-badge">Zero Tolerance Policy</div>
+        <h3>CampusSublet has zero tolerance for objectionable content and abusive behavior.</h3>
+        <p>We built this platform to make student housing safer — not to replicate the chaos of Facebook Groups. Any content or conduct that harms, deceives, or harasses other users is a direct violation of these Terms and will result in immediate action.</p>
+        <p><strong>The following are prohibited:</strong></p>
+        <ul>
+          <li>Fake, fraudulent, or intentionally misleading listings</li>
+          <li>Scams of any kind, including requesting deposits for listings you do not control</li>
+          <li>Harassment, threats, or intimidation of any user</li>
+          <li>Hate speech or content that discriminates based on race, gender, religion, sexual orientation, disability, or any protected characteristic</li>
+          <li>Spam, repetitive messages, or unsolicited advertising</li>
+          <li>Explicit, adult, or sexually suggestive content of any kind</li>
+          <li>Content that depicts or promotes illegal activity</li>
+          <li>Impersonating another person or misrepresenting your identity</li>
+        </ul>
+        <p><strong>Consequences:</strong> Violations result in immediate removal of the offending content and suspension or permanent ban of the account. CampusSublet reviews all user reports within 24 hours and will remove violating content and suspend offending users promptly.</p>
+      </div>
+
+      <p>To report a violation, use the in-app report button on any listing or user profile, or email <a href="mailto:admin@campussublet.com">admin@campussublet.com</a>. <!-- TODO: replace with real admin email before deployment --> CampusSublet reserves the right to take action on any content or account at its sole discretion, without prior notice.</p>
+    </div>
+
+    <!-- 4 · Listings -->
+    <div class="pp-section" id="s4">
+      <h2><span class="pp-num">4</span> Listings</h2>
+      <p>When you post a listing on CampusSublet, you are responsible for making sure everything in it is accurate and up to date. Listings must be for real, FSU-area properties that you have the right to sublease or transfer.</p>
+      <ul>
+        <li>All listing details — rent, dates, location, unit type — must be truthful and complete.</li>
+        <li>Do not post duplicate listings for the same unit.</li>
+        <li>Once a sublease or room is no longer available, mark the listing as <strong>Taken</strong> promptly so other students are not misled.</li>
+        <li>Listings for properties outside the FSU area, or for arrangements you are not actually offering, will be removed.</li>
+      </ul>
+      <div class="pp-callout">
+        <p>CampusSublet does not independently verify listing details. Always confirm all information directly with the poster before making any housing decisions, and see a unit in person before paying anything.</p>
+      </div>
+    </div>
+
+    <!-- 5 · Messaging -->
+    <div class="pp-section" id="s5">
+      <h2><span class="pp-num">5</span> Messaging</h2>
+      <p>The in-app messaging feature exists to help students connect about housing — nothing else. Use it to ask questions about listings, coordinate viewings, and discuss lease details.</p>
+      <ul>
+        <li>Messaging may only be used for housing-related communication.</li>
+        <li>Harassment, threats, spam, or any other abusive behavior sent through messages will result in immediate account suspension.</li>
+        <li>Do not share sensitive personal information (financial account numbers, passwords, etc.) through the messaging system.</li>
+      </ul>
+      <p>CampusSublet stores messages to enable delivery and maintain your conversation history. We do not routinely read private messages, but reserve the right to review them in connection with a reported violation or safety investigation. See our <a href="/privacy.html">Privacy Policy</a> for details.</p>
+    </div>
+
+    <!-- 6 · Blocking & Reporting -->
+    <div class="pp-section" id="s6">
+      <h2><span class="pp-num">6</span> Blocking and Reporting</h2>
+      <p>Your safety on CampusSublet matters. You have the following tools available at all times:</p>
+      <ul>
+        <li><strong>Report a listing</strong> — flag any listing you believe is fake, inaccurate, or violates these Terms.</li>
+        <li><strong>Report a user</strong> — flag any user for harassment, abusive behavior, or any other violation.</li>
+        <li><strong>Block a user</strong> — blocking a user prevents them from messaging you, viewing your profile, and hides their content from your feed. Blocking is immediate and does not notify the other user.</li>
+      </ul>
+      <p>All reports are reviewed within 24 hours. CampusSublet will remove violating content and suspend offending accounts as warranted. CampusSublet reserves the right to remove any content and suspend any account at its sole discretion, with or without prior notice.</p>
+    </div>
+
+    <!-- 7 · Privacy -->
+    <div class="pp-section" id="s7">
+      <h2><span class="pp-num">7</span> Privacy</h2>
+      <p>We take your privacy seriously. Here is the short version of what is and is not visible about you:</p>
+      <ul>
+        <li>Your <strong>email address</strong> is never shown publicly on the platform.</li>
+        <li>Your <strong>first name</strong> and verified student badge are shown on your public listing pages.</li>
+        <li>Photos you upload to a listing become part of that listing. If a listing is shared via a public link, those photos may be visible to users who are not logged in.</li>
+      </ul>
+      <p>For the full picture of how we collect, store, and handle your data, please read our <a href="/privacy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <!-- 8 · IP -->
+    <div class="pp-section" id="s8">
+      <h2><span class="pp-num">8</span> Intellectual Property</h2>
+      <p>You retain ownership of any photos and content you upload to CampusSublet. By uploading content, you grant CampusSublet a non-exclusive, royalty-free, worldwide license to display and reproduce that content within the platform for as long as your listing is active.</p>
+      <p>All CampusSublet branding, design, code, and original content are the property of CampusSublet. You may not copy, reproduce, or redistribute them without our written permission.</p>
+    </div>
+
+    <!-- 9 · Disclaimers -->
+    <div class="pp-section" id="s9">
+      <h2><span class="pp-num">9</span> Disclaimers &amp; Liability</h2>
+      <p>CampusSublet is a marketplace platform that connects FSU students. We are not a party to any sublease agreement, rental transaction, or housing arrangement made through the platform.</p>
+      <ul>
+        <li>CampusSublet is not responsible for the accuracy, completeness, or legality of any listing.</li>
+        <li>CampusSublet is not responsible for the conduct, identity, or reliability of any user.</li>
+        <li>Any agreement you enter into with another user is solely between you and that person.</li>
+      </ul>
+      <div class="pp-callout">
+        <p><strong>Use the platform at your own risk.</strong> Always verify listings in person before paying any money. Never wire funds or pay a deposit without confirming the legitimacy of the listing and the identity of the person you're dealing with.</p>
+      </div>
+      <p>To the maximum extent permitted by law, CampusSublet is provided "as is" without warranties of any kind. CampusSublet's liability to you for any claim arising from your use of the platform is limited to the greater of $0 or the amount you have paid us in the past 12 months (which is $0, since the platform is free).</p>
+    </div>
+
+    <!-- 10 · Changes -->
+    <div class="pp-section" id="s10">
+      <h2><span class="pp-num">10</span> Changes to Terms</h2>
+      <p>CampusSublet may update these Terms of Service at any time. When we make material changes, we will update the "Last updated" date at the top of this page and notify you via the app or by email where required.</p>
+      <p>Your continued use of CampusSublet after changes take effect means you accept the updated Terms. If you disagree with any update, you should stop using the platform and may request account deletion by contacting us.</p>
+    </div>
+
+    <!-- 11 · Contact -->
+    <div class="pp-section" id="s11">
+      <h2><span class="pp-num">11</span> Contact</h2>
+      <p>If you have questions about these Terms, need to report abuse, or want to appeal an account action, reach out to us directly:</p>
+      <div class="pp-contact">
+        <span class="pp-contact-name">CampusSublet</span>
+        <!-- TODO: replace admin@campussublet.com with the real admin address before deployment -->
+        <p>General questions &amp; abuse reports: <a href="mailto:admin@campussublet.com">admin@campussublet.com</a></p>
+        <p>Account appeals: <a href="mailto:admin@campussublet.com">admin@campussublet.com</a></p>
+        <p>Website: <a href="https://www.campussublet.com">www.campussublet.com</a></p>
+      </div>
+    </div>
+
+    <p style="font-size:0.82rem; color:var(--muted); font-style:italic;">These Terms of Service were last updated in March 2026.</p>
+
+    <div class="pp-tagline">CampusSublet — Connecting Students. Simplifying Subleases.</div>
+
+    <a href="#top" class="back-top">↑ Back to top</a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" loading="lazy">
+  </a>
+  <div class="footer-social-wrap">
+    <div class="footer-social-title">Check us out on social</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on Instagram">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect>
+          <circle cx="12" cy="12" r="3.8"></circle>
+          <circle cx="17.5" cy="6.8" r="1.2" class="social-icon-fill"></circle>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on TikTok">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.2 5.2c.9 1.3 2 2.1 3.3 2.5v2.4c-1.2 0-2.3-.3-3.3-1v5.1a5 5 0 1 1-5-5v2.5a2.5 2.5 0 1 0 2.5 2.5V4h2.5z" class="social-icon-fill"></path>
+        </svg>
+        <span>TikTok</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-text">Built by FSU students, for FSU students · CampusSublet.com</div>
+  <div class="footer-text">© 2026 CampusSublet · <a href="/privacy.html" style="color:inherit;opacity:0.6;">Privacy Policy</a> · <a href="/terms.html" style="color:inherit;opacity:0.6;">Terms</a> · <a href="/support.html" style="color:inherit;opacity:0.6;">Support</a></div>
+</footer>
+
+</body>
+</html>
