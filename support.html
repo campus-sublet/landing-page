@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — CampusSublet</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Support page hero ───────────────────────────────── */
+    .support-hero {
+      position: relative;
+      padding: 120px 5% 64px;
+      overflow: hidden;
+      background: linear-gradient(155deg, #0a182d 0%, #102947 45%, #173764 100%);
+    }
+    .support-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px circle at 12% 30%, rgba(109, 27, 50, 0.52), transparent 60%),
+        radial-gradient(400px circle at 88% 10%, rgba(204, 170, 106, 0.14), transparent 72%);
+    }
+    .support-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(circle at center, black 48%, transparent 98%);
+    }
+    .support-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .support-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold-400);
+      margin-bottom: 16px;
+    }
+    .support-eyebrow::before,
+    .support-eyebrow::after {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.42;
+    }
+    .support-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.0;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .support-hero p {
+      color: rgba(244, 246, 251, 0.7);
+      font-size: 0.92rem;
+    }
+
+    /* ── Main content wrapper ────────────────────────────── */
+    .support-body {
+      background: var(--sand-50);
+    }
+    .support-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 5% 96px;
+    }
+
+    /* ── Contact card (top) ──────────────────────────────── */
+    .support-contact-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 52px;
+      box-shadow: var(--shadow-sm);
+    }
+    .support-contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f5ece0, #ede3d4);
+      border: 1px solid rgba(107, 26, 49, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .support-contact-text {
+      flex: 1;
+    }
+    .support-contact-text strong {
+      display: block;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      margin-bottom: 4px;
+    }
+    .support-contact-text p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .support-contact-text a {
+      color: var(--wine-700);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .support-contact-text a:hover {
+      color: var(--wine-900);
+    }
+
+    /* ── FAQ section blocks ──────────────────────────────── */
+    .sp-section {
+      margin-bottom: 44px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 90px;
+    }
+    .sp-section:last-of-type {
+      border-bottom: none;
+    }
+    .sp-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--ink-900);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .sp-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #f5ece0, #ede3d4);
+      border: 1px solid rgba(107, 26, 49, 0.18);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    /* ── FAQ items ───────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--white);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      padding: 16px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-900);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      transition: background 0.15s;
+    }
+    .faq-q:hover {
+      background: var(--sand-50);
+    }
+    .faq-q[aria-expanded="true"] {
+      background: var(--sand-50);
+    }
+    .faq-chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-q[aria-expanded="true"] .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-a {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+    .faq-a.open {
+      display: block;
+    }
+    .faq-a a {
+      color: var(--wine-700);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .faq-a a:hover {
+      color: var(--wine-900);
+    }
+    .faq-a p {
+      margin: 12px 0 0;
+    }
+    .faq-a p:first-child {
+      margin-top: 0;
+    }
+
+    /* ── Callout box ─────────────────────────────────────── */
+    .sp-callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(107, 26, 49, 0.2);
+      border-left: 3px solid var(--wine-700);
+      background: linear-gradient(135deg, #fdf5f7, #fdf7f2);
+      margin: 20px 0 0;
+    }
+    .sp-callout p {
+      margin: 0;
+      font-size: 0.91rem;
+      color: var(--ink-800);
+      line-height: 1.7;
+    }
+
+    /* ── Bottom contact section ──────────────────────────── */
+    .support-bottom {
+      margin-top: 52px;
+      padding: 36px;
+      background: linear-gradient(135deg, #0e2040 0%, #1a3a60 100%);
+      border-radius: var(--radius-lg);
+      text-align: center;
+    }
+    .support-bottom h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .support-bottom p {
+      font-size: 0.93rem;
+      color: rgba(244, 246, 251, 0.7);
+      margin-bottom: 22px;
+    }
+    .support-bottom a.btn-support-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--wine-700), #8b2240);
+      color: var(--white);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: var(--radius-pill);
+      transition: opacity 0.18s, transform 0.18s;
+    }
+    .support-bottom a.btn-support-email:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    /* ── Closing tagline ─────────────────────────────────── */
+    .sp-tagline {
+      margin-top: 48px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--ink-800);
+      opacity: 0.55;
+      font-style: italic;
+    }
+
+    /* ── Back to top ─────────────────────────────────────── */
+    .back-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      margin-top: 40px;
+      transition: color 0.2s;
+    }
+    .back-top:hover { color: var(--wine-700); }
+
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 620px) {
+      .support-container { padding: 40px 5% 72px; }
+      .support-contact-card { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .support-bottom { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" fetchpriority="high">
+  </a>
+  <div class="nav-actions">
+    <a href="/#listings" class="btn-ghost">Browse Listings</a>
+    <a href="/#waitlist" class="btn-primary">Join Waitlist →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="support-hero">
+  <div class="support-hero-inner">
+    <div class="support-eyebrow">Help Center</div>
+    <h1>Support</h1>
+    <p>Answers to common questions — and a direct line to our team.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="support-body">
+  <div class="support-container" id="top">
+
+    <!-- Contact card -->
+    <div class="support-contact-card">
+      <div class="support-contact-icon">✉️</div>
+      <div class="support-contact-text">
+        <strong>Need help fast?</strong>
+        <p>Email us at <a href="mailto:support@campussublet.com">support@campussublet.com</a> — we typically respond within one business day.</p>
+      </div>
+    </div>
+
+    <!-- Getting Started -->
+    <div class="sp-section" id="getting-started">
+      <h2><span class="sp-icon">🚀</span> Getting Started</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What is CampusSublet?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            CampusSublet is a verified sublease marketplace built exclusively for FSU students. You can list an unused lease, browse available subleases near campus, and message other verified students — all in one place, without Facebook Groups chaos.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is CampusSublet free to use?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Yes — CampusSublet is completely free for all FSU students. There are no listing fees, no subscription charges, and no commissions.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            When does the app launch?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            We're launching soon at FSU. Join the waitlist at <a href="/#waitlist">campussublet.com</a> to get early access and founding user status. Early waitlist members get priority visibility when listings go live.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Account & Verification -->
+    <div class="sp-section" id="verification">
+      <h2><span class="sp-icon">✓</span> Account &amp; Verification</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Why do I need an FSU .edu email?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Requiring a verified FSU .edu email is how we keep the platform student-only and scam-free. It ensures every person you talk to is a real, enrolled FSU student — not a random stranger or bot.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            I don't have an active FSU email. Can I still use CampusSublet?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            At this time, CampusSublet is exclusively for active FSU students with a valid @fsu.edu email address. If you're having trouble accessing your FSU email, contact <a href="https://its.fsu.edu" target="_blank" rel="noopener noreferrer">FSU ITS</a> for help.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Listings -->
+    <div class="sp-section" id="listings">
+      <h2><span class="sp-icon">🏠</span> Listings</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What types of listings can I post?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            CampusSublet supports three listing types:
+            <p><strong>Sublease</strong> — temporarily take over someone's lease for a fixed period.</p>
+            <p><strong>Takeover</strong> — permanently assume the remainder of a lease.</p>
+            <p><strong>Room</strong> — fill a single bedroom in a multi-bedroom apartment.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How long does it take to post a listing?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Under two minutes. You'll fill in the basics — property address or area, rent, lease dates, unit type, and a short description. You can optionally add photos to improve your listing's visibility.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Does CampusSublet verify listing accuracy?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            We verify that all users are FSU students via .edu email. However, we do not independently verify the details of individual listings — including rent, availability, or unit descriptions. Always confirm details directly with the lister before making any decisions.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How do I report a suspicious listing or user?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Use the in-app report button on any listing or user profile, or email <a href="mailto:support@campussublet.com">support@campussublet.com</a> with details. We take reports seriously and investigate all flagged content.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Safety -->
+    <div class="sp-section" id="safety">
+      <h2><span class="sp-icon">🔒</span> Safety &amp; Trust</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How does CampusSublet prevent scams?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Every user must verify with an @fsu.edu email before interacting with any listing. This eliminates anonymous strangers and bots. Our in-app messaging keeps your phone number private until you're ready to share it. You should still exercise normal caution — never wire money or pay a deposit before seeing a unit in person.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What should I do if I feel unsafe or am being harassed?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Report the user immediately using the in-app report feature or email <a href="mailto:support@campussublet.com">support@campussublet.com</a>. If you believe you are in immediate danger, contact FSU campus police at (850) 644-1234 or call 911.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is my personal information shared with other users?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Your display name, university affiliation, and any profile details you choose to add are visible to other verified users. Your email address and other personal information are not shared publicly. See our <a href="/privacy.html">Privacy Policy</a> for full details.
+          </div>
+        </div>
+      </div>
+      <div class="sp-callout">
+        <p><strong>Reminder:</strong> CampusSublet is a marketplace platform only. We do not own, manage, or control any listed properties. Always conduct your own due diligence before entering into any sublease agreement.</p>
+      </div>
+    </div>
+
+    <!-- Waitlist -->
+    <div class="sp-section" id="waitlist">
+      <h2><span class="sp-icon">📋</span> Waitlist</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What do I get for joining the waitlist?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Early access to the platform before the public launch, priority listing visibility, and founding user status. We'll email you as soon as CampusSublet goes live at FSU.
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How do I remove myself from the waitlist?
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-a">
+            Email <a href="mailto:support@campussublet.com">support@campussublet.com</a> with your @fsu.edu address and we'll remove you promptly.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="support-bottom">
+      <h3>Still have questions?</h3>
+      <p>Our team is made up of FSU students too. We're here to help.</p>
+      <a href="mailto:support@campussublet.com" class="btn-support-email">✉ support@campussublet.com</a>
+    </div>
+
+    <div class="sp-tagline">CampusSublet — Connecting Students. Simplifying Subleases.</div>
+
+    <a href="#top" class="back-top">↑ Back to top</a>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="/" class="footer-logo" aria-label="CampusSublet Home">
+    <img src="/logo1.webp" alt="CampusSublet logo" class="brand-logo" width="140" height="40" loading="lazy">
+  </a>
+  <div class="footer-social-wrap">
+    <div class="footer-social-title">Check us out on social</div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on Instagram">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect>
+          <circle cx="12" cy="12" r="3.8"></circle>
+          <circle cx="17.5" cy="6.8" r="1.2" class="social-icon-fill"></circle>
+        </svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@campussublet" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="CampusSublet on TikTok">
+        <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.2 5.2c.9 1.3 2 2.1 3.3 2.5v2.4c-1.2 0-2.3-.3-3.3-1v5.1a5 5 0 1 1-5-5v2.5a2.5 2.5 0 1 0 2.5 2.5V4h2.5z" class="social-icon-fill"></path>
+        </svg>
+        <span>TikTok</span>
+      </a>
+    </div>
+  </div>
+  <div class="footer-text">Built by FSU students, for FSU students · CampusSublet.com</div>
+  <div class="footer-text">© 2026 CampusSublet · <a href="/privacy.html" style="color:inherit;opacity:0.6;">Privacy Policy</a> · <a href="/support.html" style="color:inherit;opacity:0.6;">Support</a></div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      var answer = this.nextElementSibling;
+      this.setAttribute('aria-expanded', !expanded);
+      answer.classList.toggle('open', !expanded);
+    });
+  });
+</script>
+
+</body>
+</html>
