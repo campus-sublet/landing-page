@@ -248,8 +248,13 @@ nav {
 .hero-cta-row {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
     margin-bottom: 24px;
+}
+
+.hero-cta-row img {
+    height: 60px;
 }
 
 .btn-hero-primary {
